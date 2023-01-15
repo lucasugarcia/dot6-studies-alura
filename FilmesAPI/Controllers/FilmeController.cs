@@ -5,7 +5,7 @@ namespace FilmesAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class FilmesController : ControllerBase
+public class FilmeController : ControllerBase
 {
     private static List<Filme> filmes = new List<Filme>();
     private static int id = 0;
@@ -22,9 +22,9 @@ public class FilmesController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Filme> RecuperaFilmes()
+    public IEnumerable<Filme> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 50)
     {
-        return filmes;
+        return filmes.Skip(skip).Take(take);
     }
 
     [HttpGet("{id}")]
