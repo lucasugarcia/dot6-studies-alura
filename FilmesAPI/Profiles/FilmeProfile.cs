@@ -6,8 +6,9 @@ namespace FilmesAPI.Profiles;
 
 public class FilmeProfile : Profile
 {
-	public FilmeProfile()
-	{
-		CreateMap<CreateFilmeDto, Filme>();
-	}
+    public FilmeProfile()
+    {
+        CreateMap<CreateFilmeDto, Filme>();
+        CreateMap<UpdateFilmeDto, Filme>();
+    }
 }
