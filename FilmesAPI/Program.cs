@@ -6,6 +6,8 @@ var connetionSting = builder.Configuration.GetConnectionString("FilmeConnection"
 // Add services to the container.
 builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(connetionSting, ServerVersion.AutoDetect(connetionSting)));
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
